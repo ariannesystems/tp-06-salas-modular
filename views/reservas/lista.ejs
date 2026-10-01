@@ -1,0 +1,38 @@
+<div>
+    <div class="tarjeta-catalogo">
+        <span class="etiqueta">CATÁLOGO</span>
+        <hr class="linea-separadora">
+  
+    <div class="fila-catalogo">
+        <h1><%= titulo %></h1>
+        <a href="/reservas/nueva" class="boton texto-centrado" >Agregar reservas</a>
+    </div>
+</div>
+
+<% if (reservas.length === 0) { %>
+    <div  class="tarjeta-principal">
+        <p class="texto-centrado edad-texto">No hay reservas para mostrar.</p>
+    </div>
+<% } else { %>
+
+    <div class="grid-detalle">
+    <% reservas.forEach(reserva => { %>
+        <article class="tarjeta-detalle">
+        <div class="contenedor-foto">
+            <img src="/img/reservas.svg" alt="<%= reserva.estudiante%>">
+        </div>
+        <div class="info-tarjeta">
+            <span class="etiqueta"><%= reserva.estudiante %></span>
+            <h3 class="titulo-segundo">Email: <%= reserva.email %></h3>
+            <p class="titulo-tercero">Sala: <%= reserva.sala %> Año</p>
+            <p class="titulo-tercero">Estado: <%= reserva.fecha.split("-").reverse().join("/") %></p>
+        </div>
+        <div style="margin-top: 20px">
+            <a  href="/reservas/<%= reserva.id %>">Ver detalle</a>
+        </div>
+        </article>
+    <% }); %>
+    </div>
+<% } %>
+
+  

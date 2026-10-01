@@ -1,0 +1,24 @@
+<article class="tarjeta-principal">
+    
+    <div class="contenedor-foto">
+        <img src="/img/reservas.svg" alt="reserva.estudiante">
+    </div>
+
+    <div>
+         <p class="etiqueta"><%= reserva.estudiante %></p>
+    
+        <h2 class="titulo-segundo">Email: <%= reserva.email %></h2>
+                
+        <p class="titulo-tercero">Sala: <%= reserva.sala%></p>
+
+        <p><span class="titulo-tercero">Fecha:</span> <%= reserva.fecha.split("-").reverse().join("/") %></p>
+
+        <p class="titulo-tercero">Turno: <%= reserva.turno%></p>
+
+        <p class="titulo-tercero">Número de personas: <%= reserva.personas%></p>
+    </div>
+    <hr>
+    <div class="espacio-interlineado objeto-centrado">
+        <a class="boton" href="/reservas">Volver a la lista de reservas</a>
+    </div>
+</article>
